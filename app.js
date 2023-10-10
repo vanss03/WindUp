@@ -5,7 +5,8 @@ var app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
-mongoose.connect("mongodb://localhost:27017/todolistDB");
+//mongoose.connect("mongodb://localhost:27017/todolistDB");
+mongoose.connect("mongodb://0.0.0.0:27017/todolistDB");
 
 const itemSchema = {
   name: String,
@@ -54,7 +55,7 @@ app.post("/delete", function (req, res) {
   });
 });
 
-app.listen(3000, function () {
-  console.log("listening on port 3000.");
+app.listen(1000, function () {
+  console.log("listening on port 1000.");
 });
 
