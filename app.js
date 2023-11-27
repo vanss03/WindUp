@@ -6,7 +6,10 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 //mongoose.connect("mongodb://localhost:27017/todolistDB");
-mongoose.connect("mongodb://0.0.0.0:27017/todolistDB");
+//mongoose.connect("mongodb://0.0.0.0:27017/todolistDB");
+
+const mongoURI = "mongodb+srv://vanshikasharma2003:Vanshika123@cluster0.wnb3kmq.mongodb.net/";
+mongoose.connect(mongoURI).then(console.log("connected successfully")).catch((err)=>console.log(err));
 
 const itemSchema = {
   name: String,
